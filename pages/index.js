@@ -23,6 +23,14 @@ export default function Heroes({ heroes }) {
       {heroes.map(hero => (
         <HeroCard key={hero.sys.id} hero={hero} />
       ))}
+
+      <style jsx>{`
+        .recipe-list {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 20px 60px;
+        }
+      `}</style>
     </div>
   )
 }
