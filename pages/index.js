@@ -14,7 +14,7 @@ export async function getStaticProps() {
       heroes: res.items
     }
   };
-}
+};
 
 export default function Heroes({ heroes }) {
   console.log(heroes);
