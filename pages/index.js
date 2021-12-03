@@ -1,4 +1,5 @@
 import { createClient } from "contentful"
+import HeroCard from "../components/HeroCard";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -10,16 +11,18 @@ export async function getStaticProps() {
 
   return {
     props: {
-      recipes: res.items
+      heroes: res.items
     }
   };
 }
 
-export default function Heroes({ recipes }) {
-  console.log(recipes);
+export default function Heroes({ heroes }) {
+  console.log(heroes);
   return (
     <div className="recipe-list">
-      Heroes List
+      {heroes.map(hero => (
+        <HeroCard key={hero.sys.id} hero={hero} />
+      ))}
     </div>
   )
 }
