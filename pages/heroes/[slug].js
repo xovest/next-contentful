@@ -31,7 +31,8 @@ export async function getStaticProps({ params }) {
   });
 
   return {
-    props: { hero: items[0] }
+    props: { hero: items[0] },
+    revalidate: 1
   };
 };
 

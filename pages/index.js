@@ -12,7 +12,8 @@ export async function getStaticProps() {
   return {
     props: {
       heroes: res.items
-    }
+    },
+    revalidate: 1
   };
 };
 
